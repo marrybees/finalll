@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Search Page</h1>
+<form action="/search" method="post">
+    <input type="text" name="search_query" placeholder="Search">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+{% if search_query %}
+        {% if search_query == 'Home' %}
+            <a href="/" class="btn btn-primary">Go to Home</a>
+        {% elif search_query == 'user' %}
+            <a href="/user" class="btn btn-primary">Go to User</a>
+        {% elif search_query == 'Login' %}
+            <a href="/login" class="btn btn-primary">Go to Login</a>
+        {% elif search_query == 'Logout' %}
+            <a href="/logout" class="btn btn-primary">Go to Logout</a>
+        {% elif search_query == 'contact' %}
+            <a href="/contact" class="btn btn-primary">Go to Contact</a>
+        {% elif search_query == 'signup' %}
+            <a href="/signup" class="btn btn-primary">Go to signup</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}

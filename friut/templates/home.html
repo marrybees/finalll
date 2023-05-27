@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home Pagw</h1>
-<p>Welcome to the friuts page</p>
+    <h1>Crypto Market Data</h1>
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in crypto_data %}
+            <tr>
+                {% for column in row %}
+                <td>{{ column }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

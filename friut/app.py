@@ -99,7 +99,12 @@ def login():
 
     return render_template('login.html')
 
-
+@app.route("/logout")
+def logout():
+    session.pop("username", None)
+    return render_template('logout.html')
 
 if __name__ == 'main':
     app.run(debug=True)
+
+
